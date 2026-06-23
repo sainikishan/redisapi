@@ -24,6 +24,7 @@ app.delete('/banner', async (req, res) => {
     await redis.del(BANNER_KEY);
     res.json({ success: true });
 });
+
 app.get("/banner/exists", async (req, res) => {
     const exists = await redis.exists(BANNER_KEY);
     res.json({ exists: Boolean(exists) });
